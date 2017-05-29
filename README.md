@@ -1,7 +1,11 @@
+ Printer Information
+ ===================
 Modified for use on the KLD series of printers, should work on the 1260 and 2150 as well as clones. No guarantee that it will work on any other printers. It will not work as is on the Wanhao Duplicator 7.
 
 Most of the direct DLP control for the mUVeDLP printers will not be pertinent to these printers so all the added M650 commands listed below can be ignored.
 
+ No longer Necessary
+ ===================
 All implemented and working! See mUVe 3D's Custom printer control Machine Codes, MCodes, below for examples of how to take advantage of the advanced motion features of the firmware and chassis. 
 
 Installation Instructions: http://www.muve3d.net/press/supportsources/muve-1-software/
