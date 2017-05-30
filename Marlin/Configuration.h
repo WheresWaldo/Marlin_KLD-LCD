@@ -16,7 +16,7 @@
 // startup. Implementation of an idea by Prof Braino to inform user that any changes made to this
 // build by the user have been successfully uploaded into firmware.
 #define STRING_VERSION_CONFIG_H __DATE__ " " __TIME__ // build date and time
-#define STRING_CONFIG_H_AUTHOR "(none, default config)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(BH, default config)" // Who made the changes.
 
 // SERIAL_PORT selects which serial port should be used for communication with the host.
 // This allows the connection of wireless adapters (for instance) to non-default port pins.
@@ -369,7 +369,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 // default settings
 
 #define DEFAULT_AXIS_STEPS_PER_UNIT   {80, 80, 1600, 700}  //--BH default settings for for mUVe 1.5 or if you have the leadscrew upgrade
-#define DEFAULT_MAX_FEEDRATE          {400, 400, 150, 45}  //--BH (mm/sec)
+#define DEFAULT_MAX_FEEDRATE          {400, 400, 200, 45}  //--BH (mm/sec)
 #define DEFAULT_MAX_ACCELERATION      {1000, 1000, 400, 1000}  //--BH X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 
 #define DEFAULT_ACCELERATION          1000    //--BH X, Y, Z and E max acceleration in mm/s^2 for printing moves
