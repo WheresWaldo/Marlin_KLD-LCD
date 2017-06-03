@@ -2,7 +2,7 @@
  ===================
 Modified for use on the KLD series of printers, should work on the 1260 and 2150 as well as clones. No guarantee that it will work on any other printers. It will not work as is on the Wanhao Duplicator 7.
 
-Most of the direct DLP control for the mUVeDLP printers will not be pertinent to these printers so all the added M650 commands listed below can be ignored.
+Most of the direct DLP control for the mUVeDLP printers will not be pertinent to these printers so all the added M65x commands have been purged from the source code.
 
 -Marlin Firmware-
 Marlin has a GPL license because I believe in open development.

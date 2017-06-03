@@ -47,9 +47,6 @@
 #endif
 
 // Interrupt vector for projector serial port
-#ifdef PROJECTOR_SERIAL_PORT
-#define P_USARTx_RX_vect SERIAL_REGNAME(USART,PROJECTOR_SERIAL_PORT,_RX_vect)
-#endif
 
 #define DEC 10
 #define HEX 16
@@ -114,7 +111,7 @@ class MarlinSerial //: public Stream
       }
     }
 
-#if UART_PRESENT(SERIAL_PORT) || UART_PRESENT(PROJECTOR_SERIAL_PORT)
+#if UART_PRESENT(SERIAL_PORT)
     // Interrupt service routine. Only necessary if there is a real UART.
     FORCE_INLINE void isr()
     {
@@ -189,7 +186,7 @@ class MarlinSerial //: public Stream
     void setRegisters(void);
     byte portNum;
 
-#if UART_PRESENT(SERIAL_PORT) || UART_PRESENT(PROJECTOR_SERIAL_PORT)
+#if UART_PRESENT(SERIAL_PORT)
     ring_buffer rx_buffer;
 #endif
 
@@ -207,7 +204,6 @@ class MarlinSerial //: public Stream
 };
 
 extern MarlinSerial MSerial;
-extern MarlinSerial PSerial;
 
 #endif // !AT90USB
 
