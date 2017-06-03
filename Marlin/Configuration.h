@@ -24,8 +24,8 @@
 #define SERIAL_PORT 0
 
 // This determines the communication speed of the printer
-#define BAUDRATE 250000
-//#define BAUDRATE 115200
+//#define BAUDRATE 250000  //--BH Request feature upgrade for nanoDLP to support this baud rate.
+#define BAUDRATE 115200
 
 
 //// The following define selects which electronics board you have. Please choose the one that matches your setup
