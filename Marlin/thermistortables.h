@@ -564,6 +564,166 @@ const short temptable_10[][2] PROGMEM = {
 };
 #endif
 
+#if (THERMISTORHEATER_0 == 11) || (THERMISTORHEATER_1 == 11) || (THERMISTORHEATER_2 == 11) || (THERMISTORBED == 11) 
+// QU-BD silicone bed QWG-104F-3950 thermistor
+
+const short temptable_11[][2] PROGMEM = {
+         {1*OVERSAMPLENR,        938},
+         {31*OVERSAMPLENR,       314},
+         {41*OVERSAMPLENR,       290},
+         {51*OVERSAMPLENR,       272},
+         {61*OVERSAMPLENR,       258},
+         {71*OVERSAMPLENR,       247},
+         {81*OVERSAMPLENR,       237},
+         {91*OVERSAMPLENR,       229},
+         {101*OVERSAMPLENR,      221},
+         {111*OVERSAMPLENR,      215},
+         {121*OVERSAMPLENR,      209},
+         {131*OVERSAMPLENR,      204},
+         {141*OVERSAMPLENR,      199},
+         {151*OVERSAMPLENR,      195},
+         {161*OVERSAMPLENR,      190},
+         {171*OVERSAMPLENR,      187},
+         {181*OVERSAMPLENR,      183},
+         {191*OVERSAMPLENR,      179},
+         {201*OVERSAMPLENR,      176},
+         {221*OVERSAMPLENR,      170},
+         {241*OVERSAMPLENR,      165},
+         {261*OVERSAMPLENR,      160},
+         {281*OVERSAMPLENR,      155},
+         {301*OVERSAMPLENR,      150},
+         {331*OVERSAMPLENR,      144},
+         {361*OVERSAMPLENR,      139},
+         {391*OVERSAMPLENR,      133},
+         {421*OVERSAMPLENR,      128},
+         {451*OVERSAMPLENR,      123},
+         {491*OVERSAMPLENR,      117},
+         {531*OVERSAMPLENR,      111},
+         {571*OVERSAMPLENR,      105},
+         {611*OVERSAMPLENR,      100},
+         {641*OVERSAMPLENR,      95},
+         {681*OVERSAMPLENR,      90},
+         {711*OVERSAMPLENR,      85},
+         {751*OVERSAMPLENR,      79},
+         {791*OVERSAMPLENR,      72},
+         {811*OVERSAMPLENR,      69},
+         {831*OVERSAMPLENR,      65},
+         {871*OVERSAMPLENR,      57},
+         {881*OVERSAMPLENR,      55},
+         {901*OVERSAMPLENR,      51},
+         {921*OVERSAMPLENR,      45},
+         {941*OVERSAMPLENR,      39},
+         {971*OVERSAMPLENR,      28},
+         {981*OVERSAMPLENR,      23},
+         {991*OVERSAMPLENR,      17},
+         {1001*OVERSAMPLENR,     9},
+         {1021*OVERSAMPLENR,     -27}
+};
+#endif
+
+#if (THERMISTORHEATER_0 == 13) || (THERMISTORHEATER_1 == 13) || (THERMISTORHEATER_2 == 13) || (THERMISTORBED == 13)
+// Hisens thermistor B25/50 =3950 +/-1%
+
+const short temptable_13[][2] PROGMEM = {
+ {	20.04*OVERSAMPLENR,	300	},
+{	23.19*OVERSAMPLENR,	290	},
+{	26.71*OVERSAMPLENR,	280	},
+{	31.23*OVERSAMPLENR,	270	},
+{	36.52*OVERSAMPLENR,	260	},
+{	42.75*OVERSAMPLENR,	250	},
+{	50.68*OVERSAMPLENR,	240	},
+{	60.22*OVERSAMPLENR,	230	},
+{	72.03*OVERSAMPLENR,	220	},
+{	86.84*OVERSAMPLENR,	210	},
+{	102.79*OVERSAMPLENR, 200 },
+{	124.46*OVERSAMPLENR, 190 },
+{	151.02*OVERSAMPLENR, 180 },
+{	182.86*OVERSAMPLENR, 170 },
+{	220.72*OVERSAMPLENR, 160 },
+{	316.96*OVERSAMPLENR, 140 },
+{	447.17*OVERSAMPLENR, 120 },
+{	590.61*OVERSAMPLENR, 100 },
+{	737.31*OVERSAMPLENR, 80	},
+{	857.77*OVERSAMPLENR, 60	},
+{	939.52*OVERSAMPLENR, 40	},
+{	986.03*OVERSAMPLENR, 20	},
+{	1008.7*OVERSAMPLENR, 0}
+
+};
+#endif
+
+#if (THERMISTORHEATER_0 == 20) || (THERMISTORHEATER_1 == 20) || (THERMISTORHEATER_2 == 20) || (THERMISTORBED == 20) // PT100 with INA826 amp on Ultimaker v2.0 electronics
+/* The PT100 in the Ultimaker v2.0 electronics has a high sample value for a high temperature.
+This does not match the normal thermistor behaviour so we need to set the following defines */
+#if (THERMISTORHEATER_0 == 20)
+# define HEATER_0_RAW_HI_TEMP 16383
+# define HEATER_0_RAW_LO_TEMP 0
+#endif
+#if (THERMISTORHEATER_1 == 20)
+# define HEATER_1_RAW_HI_TEMP 16383
+# define HEATER_1_RAW_LO_TEMP 0
+#endif
+#if (THERMISTORHEATER_2 == 20)
+# define HEATER_2_RAW_HI_TEMP 16383
+# define HEATER_2_RAW_LO_TEMP 0
+#endif
+#if (THERMISTORBED == 20)
+# define HEATER_BED_RAW_HI_TEMP 16383
+# define HEATER_BED_RAW_LO_TEMP 0
+#endif
+const short temptable_20[][2] PROGMEM = {
+{         0*OVERSAMPLENR ,       0     },
+{       227*OVERSAMPLENR ,       1     },
+{       236*OVERSAMPLENR ,       10     },
+{       245*OVERSAMPLENR ,       20     },
+{       253*OVERSAMPLENR ,       30     },
+{       262*OVERSAMPLENR ,       40     },
+{       270*OVERSAMPLENR ,       50     },
+{       279*OVERSAMPLENR ,       60     },
+{       287*OVERSAMPLENR ,       70     },
+{       295*OVERSAMPLENR ,       80     },
+{       304*OVERSAMPLENR ,       90     },
+{       312*OVERSAMPLENR ,       100     },
+{       320*OVERSAMPLENR ,       110     },
+{       329*OVERSAMPLENR ,       120     },
+{       337*OVERSAMPLENR ,       130     },
+{       345*OVERSAMPLENR ,       140     },
+{       353*OVERSAMPLENR ,       150     },
+{       361*OVERSAMPLENR ,       160     },
+{       369*OVERSAMPLENR ,       170     },
+{       377*OVERSAMPLENR ,       180     },
+{       385*OVERSAMPLENR ,       190     },
+{       393*OVERSAMPLENR ,       200     },
+{       401*OVERSAMPLENR ,       210     },
+{       409*OVERSAMPLENR ,       220     },
+{       417*OVERSAMPLENR ,       230     },
+{       424*OVERSAMPLENR ,       240     },
+{       432*OVERSAMPLENR ,       250     },
+{       440*OVERSAMPLENR ,       260     },
+{       447*OVERSAMPLENR ,       270     },
+{       455*OVERSAMPLENR ,       280     },
+{       463*OVERSAMPLENR ,       290     },
+{       470*OVERSAMPLENR ,       300     },
+{       478*OVERSAMPLENR ,       310     },
+{       485*OVERSAMPLENR ,       320     },
+{       493*OVERSAMPLENR ,       330     },
+{       500*OVERSAMPLENR ,       340     },
+{       507*OVERSAMPLENR ,       350     },
+{       515*OVERSAMPLENR ,       360     },
+{       522*OVERSAMPLENR ,       370     },
+{       529*OVERSAMPLENR ,       380     },
+{       537*OVERSAMPLENR ,       390     },
+{       544*OVERSAMPLENR ,       400     },
+{       614*OVERSAMPLENR ,       500     },
+{       681*OVERSAMPLENR ,       600     },
+{       744*OVERSAMPLENR ,       700     },
+{       805*OVERSAMPLENR ,       800     },
+{       862*OVERSAMPLENR ,       900     },
+{       917*OVERSAMPLENR ,       1000     },
+{       968*OVERSAMPLENR ,       1100     }
+};
+#endif
+
 #if (THERMISTORHEATER_0 == 51) || (THERMISTORHEATER_1 == 51) || (THERMISTORHEATER_2 == 51) || (THERMISTORBED == 51)
 // 100k EPCOS (WITH 1kohm RESISTOR FOR PULLUP, R9 ON SANGUINOLOLU! NOT FOR 4.7kohm PULLUP! THIS IS NOT NORMAL!)
 // Verified by linagee.
@@ -709,6 +869,14 @@ const short temptable_55[][2] PROGMEM = {
 #endif
 
 #if (THERMISTORHEATER_0 == 60) || (THERMISTORHEATER_1 == 60) || (THERMISTORHEATER_2 == 60) || (THERMISTORBED == 60) // Maker's Tool Works Kapton Bed Thermister
+// ./createTemperatureLookup.py --r0=100000 --t0=25 --r1=0 --r2=4700 --beta=3950 
+// r0: 100000
+// t0: 25
+// r1: 0 (parallel with rTherm)
+// r2: 4700 (series with rTherm)
+// beta: 3950
+// min adc: 1 at 0.0048828125 V
+// max adc: 1023 at 4.9951171875 V
 const short temptable_60[][2] PROGMEM = {
    {51*OVERSAMPLENR, 272},
    {61*OVERSAMPLENR, 258},
@@ -784,7 +952,106 @@ const short temptable_60[][2] PROGMEM = {
    {1008*OVERSAMPLENR, 0},
 };
 #endif
+#if (THERMISTORBED == 12) 
+//100k 0603 SMD Vishay NTCS0603E3104FXT (4.7k pullup) (calibrated for Makibox hot bed)
+const short temptable_12[][2] PROGMEM = {
+   {35*OVERSAMPLENR, 180}, //top rating 180C
+   {211*OVERSAMPLENR, 140},
+   {233*OVERSAMPLENR, 135},
+   {261*OVERSAMPLENR, 130},
+   {290*OVERSAMPLENR, 125},
+   {328*OVERSAMPLENR, 120},
+   {362*OVERSAMPLENR, 115},
+   {406*OVERSAMPLENR, 110},
+   {446*OVERSAMPLENR, 105},
+   {496*OVERSAMPLENR, 100},
+   {539*OVERSAMPLENR, 95},
+   {585*OVERSAMPLENR, 90},
+   {629*OVERSAMPLENR, 85},
+   {675*OVERSAMPLENR, 80},
+   {718*OVERSAMPLENR, 75},
+   {758*OVERSAMPLENR, 70},
+   {793*OVERSAMPLENR, 65},
+   {822*OVERSAMPLENR, 60},
+   {841*OVERSAMPLENR, 55},
+   {875*OVERSAMPLENR, 50},
+   {899*OVERSAMPLENR, 45},
+   {926*OVERSAMPLENR, 40},
+   {946*OVERSAMPLENR, 35},
+   {962*OVERSAMPLENR, 30},
+   {977*OVERSAMPLENR, 25},
+   {987*OVERSAMPLENR, 20},
+   {995*OVERSAMPLENR, 15},
+   {1001*OVERSAMPLENR, 10},
+   {1010*OVERSAMPLENR, 0},
+   {1023*OVERSAMPLENR, -40},
+};
+#endif
 
+// Pt1000 and Pt100 handling
+// 
+// Rt=R0*(1+a*T+b*T*T) [for T>0]
+// a=3.9083E-3, b=-5.775E-7
+
+#define PtA 3.9083E-3
+#define PtB -5.775E-7
+#define PtRt(T,R0) ((R0)*(1.0+(PtA)*(T)+(PtB)*(T)*(T)))
+#define PtAdVal(T,R0,Rup) (short)(1024/(Rup/PtRt(T,R0)+1))
+#define PtLine(T,R0,Rup) { PtAdVal(T,R0,Rup)*OVERSAMPLENR, T },
+
+#if (THERMISTORHEATER_0 == 110) || (THERMISTORHEATER_1 == 110) || (THERMISTORHEATER_2 == 110) || (THERMISTORBED == 110) // Pt100 with 1k0 pullup
+const short temptable_110[][2] PROGMEM = {
+// only few values are needed as the curve is very flat  
+  PtLine(0,100,1000)
+  PtLine(50,100,1000)
+  PtLine(100,100,1000)
+  PtLine(150,100,1000)
+  PtLine(200,100,1000)
+  PtLine(250,100,1000)
+  PtLine(300,100,1000)
+};
+#endif
+#if (THERMISTORHEATER_0 == 147) || (THERMISTORHEATER_1 == 147) || (THERMISTORHEATER_2 == 147) || (THERMISTORBED == 147) // Pt100 with 4k7 pullup
+const short temptable_147[][2] PROGMEM = {
+// only few values are needed as the curve is very flat  
+  PtLine(0,100,4700)
+  PtLine(50,100,4700)
+  PtLine(100,100,4700)
+  PtLine(150,100,4700)
+  PtLine(200,100,4700)
+  PtLine(250,100,4700)
+  PtLine(300,100,4700)
+};
+#endif
+#if (THERMISTORHEATER_0 == 1010) || (THERMISTORHEATER_1 == 1010) || (THERMISTORHEATER_2 == 1010) || (THERMISTORBED == 1010) // Pt1000 with 1k0 pullup
+const short temptable_1010[][2] PROGMEM = {
+  PtLine(0,1000,1000)
+  PtLine(25,1000,1000)
+  PtLine(50,1000,1000)
+  PtLine(75,1000,1000)
+  PtLine(100,1000,1000)
+  PtLine(125,1000,1000)
+  PtLine(150,1000,1000)
+  PtLine(175,1000,1000)
+  PtLine(200,1000,1000)
+  PtLine(225,1000,1000)
+  PtLine(250,1000,1000)
+  PtLine(275,1000,1000)
+  PtLine(300,1000,1000)
+};
+#endif
+#if (THERMISTORHEATER_0 == 1047) || (THERMISTORHEATER_1 == 1047) || (THERMISTORHEATER_2 == 1047) || (THERMISTORBED == 1047) // Pt1000 with 4k7 pullup
+const short temptable_1047[][2] PROGMEM = {
+// only few values are needed as the curve is very flat  
+  PtLine(0,1000,4700)
+  PtLine(50,1000,4700)
+  PtLine(100,1000,4700)
+  PtLine(150,1000,4700)
+  PtLine(200,1000,4700)
+  PtLine(250,1000,4700)
+  PtLine(300,1000,4700)
+};
+#endif
 
 #define _TT_NAME(_N) temptable_ ## _N
 #define TT_NAME(_N) _TT_NAME(_N)
