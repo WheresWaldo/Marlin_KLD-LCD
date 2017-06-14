@@ -472,7 +472,7 @@
   #endif
 
   #if MOTHERBOARD == 33 || MOTHERBOARD == 35 || MOTHERBOARD == 67
-    #define FAN_PIN            9 //--BH (Sprinter config) - Changed from 9 to 4 so that fan wouldn't be controlled and shut off constantly during motion.
+    #define FAN_PIN            4 //--BH (Sprinter config) - Changed from 9 to 4 so that fan wouldn't be controlled and shut off constantly during motion.
   #else
     #define FAN_PIN            4 // IO pin. Buffer needed
   #endif
