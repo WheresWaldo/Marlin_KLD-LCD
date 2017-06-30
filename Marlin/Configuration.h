@@ -485,12 +485,12 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; //--BH set to true to invert the log
 
 //// MOVEMENT SETTINGS
 #define NUM_AXIS 4 // The axis order in all axis related arrays is X, Y, Z, E
-#define HOMING_FEEDRATE {1500, 1500, 150, 300}  //--BH set the homing speeds (mm/min)
+#define HOMING_FEEDRATE {1500, 1500, 125, 300}  //--BH set the homing speeds (mm/min)
 
 // default settings
 
 #define DEFAULT_AXIS_STEPS_PER_UNIT   {80, 80, 1600, 700}  //--BH default settings for for KLD-LCD1260/2150
-#define DEFAULT_MAX_FEEDRATE          {400, 400, 200, 45}  //--BH (mm/sec)
+#define DEFAULT_MAX_FEEDRATE          {400, 400, 220, 45}  //--BH (mm/sec)
 #define DEFAULT_MAX_ACCELERATION      {1000, 1000, 400, 1000}  //--BH X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 
 #define DEFAULT_ACCELERATION          1000    //--BH X, Y, Z and E max acceleration in mm/s^2 for printing moves
