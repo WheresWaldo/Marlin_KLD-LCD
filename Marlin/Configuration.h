@@ -229,9 +229,6 @@
 // Uncomment the following line to enable CoreXY kinematics
 // #define COREXY
 
-// Uncomment the following line for mUVe 3D printers
-#define MUVE
-
 // coarse Endstop Settings
 #define ENDSTOPPULLUPS // Comment this out (using // at the start of the line) to disable the endstop pullup resistors
 
@@ -290,7 +287,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 
 // ENDSTOP SETTINGS:
 // Sets direction of endstops when homing; 1=MAX, -1=MIN
-#define X_HOME_DIR 1
+#define X_HOME_DIR -1
 #define Y_HOME_DIR -1
 #define Z_HOME_DIR -1
 
@@ -358,7 +355,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 
 //// MOVEMENT SETTINGS
 #define NUM_AXIS 4 // The axis order in all axis related arrays is X, Y, Z, E
-#define HOMING_FEEDRATE {1500, 1500, 150, 300}  //--BH set the homing speeds (mm/min)
+#define HOMING_FEEDRATE {1500, 1500, 125, 300}  //--BH set the homing speeds (mm/min)
 
 // default settings
 
