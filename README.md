@@ -2,31 +2,11 @@
 
 ## Current Status: In Development
 
-Marlin development is being accelerated to catch up with a long list of issues. Check the Issues and Pull Requests links on the right to to see what we are currently working on.
-
 ## Credits
 
 The current Marlin dev team consists of:
 
- - Scott Lahteine [@thinkyhead] - English
- - Roxanne Neufeld [@Roxy-3DPrintBoard] - English
- - Andreas Hardtung [@AnHardt] - Deutsch, English
- - [@Wurstnase] - Deutsch, English
- - [@fmalpartida] - English, Spanish
- - [@CONSULitAS] - Deutsch, English
- - [@maverikou]
- - Chris Palmer [@nophead]
- - [@paclema]
- - [@epatel]
- - Erik van der Zalm [@ErikZalm]
- - David Braam [@daid]
- - Bernhard Kubicek [@bkubicek]
-
-More features have been added by:
-  - Alberto Cotronei [@MagoKimbra]
-  - Lampmaker,
-  - Bradley Feldman,
-  - and others...
+  - others...
 
 ## License
 
