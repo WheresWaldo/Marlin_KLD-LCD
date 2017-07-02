@@ -605,6 +605,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; //--BH set to true to invert the log
   #define NEWPANEL
   #define ULTIPANEL
 #endif
+
 #if defined(RA_CONTROL_PANEL)
  #define ULTIPANEL
  #define NEWPANEL
@@ -683,7 +684,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; //--BH set to true to invert the log
 
 #ifdef ULTIPANEL
 //  #define NEWPANEL  //enable this if you have a click-encoder panel
-  #define SDSUPPORT
+  #define SDSUPPORT  //--BH just testing LCD compilation
   #define ULTRA_LCD
   #ifdef DOGLCD // Change number of lines to match the DOG graphic display
     #define LCD_WIDTH 20
