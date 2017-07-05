@@ -278,7 +278,7 @@ your extruder heater takes 2 minutes to hit the target on heating.
 // #define COREXY
 
 // coarse Endstop Settings
-#define ENDSTOPPULLUPS // Comment this out (using // at the start of the line) to disable the endstop pullup resistors
+//#define ENDSTOPPULLUPS //--BH Comment this out (using // at the start of the line) to disable the endstop pullup resistors
 
 #ifndef ENDSTOPPULLUPS
   // fine endstop settings: Individual pullups. will be ignored if ENDSTOPPULLUPS is defined
@@ -300,8 +300,8 @@ your extruder heater takes 2 minutes to hit the target on heating.
 #endif
 
 // The pullups are needed if you directly connect a mechanical endswitch between the signal and ground pins.
-const bool X_MIN_ENDSTOP_INVERTING = false; //--BH set to true to invert the logic of the endstop.
-const bool Y_MIN_ENDSTOP_INVERTING = false; //--BH set to true to invert the logic of the endstop.
+const bool X_MIN_ENDSTOP_INVERTING = true; //--BH set to true to invert the logic of the endstop.
+const bool Y_MIN_ENDSTOP_INVERTING = true; //--BH set to true to invert the logic of the endstop.
 const bool Z_MIN_ENDSTOP_INVERTING = false; //--BH set to true to invert the logic of the endstop.
 const bool X_MAX_ENDSTOP_INVERTING = false; //--BH set to true to invert the logic of the endstop.
 const bool Y_MAX_ENDSTOP_INVERTING = false; //--BH set to true to invert the logic of the endstop.
