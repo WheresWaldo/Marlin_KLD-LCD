@@ -490,11 +490,11 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; //--BH set to true to invert the log
 // default settings
 
 #define DEFAULT_AXIS_STEPS_PER_UNIT   {80, 80, 1600, 700}  //--BH default settings for for KLD-LCD1260/2150
-#define DEFAULT_MAX_FEEDRATE          {400, 400, 220, 45}  //--BH (mm/sec)
-#define DEFAULT_MAX_ACCELERATION      {1000, 1000, 400, 1000}  //--BH X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
+#define DEFAULT_MAX_FEEDRATE          {400, 400, 150, 45}  //--BH (mm/sec)
+#define DEFAULT_MAX_ACCELERATION      {1000, 1000, 200, 1000}  //--BH X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 
-#define DEFAULT_ACCELERATION          1000    //--BH X, Y, Z and E max acceleration in mm/s^2 for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  2000   //--BH X, Y, Z and E max acceleration in mm/s^2 for retracts
+#define DEFAULT_ACCELERATION          1000  //--BH X, Y, Z and E max acceleration in mm/s^2 for printing moves
+#define DEFAULT_RETRACT_ACCELERATION  2000  //--BH X, Y, Z and E max acceleration in mm/s^2 for retracts
 
 // Offset of the extruders (uncomment if using more than one and relying on firmware to position when changing).
 // The offset has to be X=0, Y=0 for the extruder 0 hotend (default extruder).
@@ -503,9 +503,9 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; //--BH set to true to invert the log
 // #define EXTRUDER_OFFSET_Y {0.0, 5.00}  // (in mm) for each extruder, offset of the hotend on the Y axis
 
 // The speed change that does not require acceleration (i.e. the software might assume it can be done instantaneously)
-#define DEFAULT_XYJERK                20.0    // (mm/sec)
-#define DEFAULT_ZJERK                 0.4     // (mm/sec)
-#define DEFAULT_EJERK                 5.0    // (mm/sec)
+#define DEFAULT_XYJERK                20.0  // (mm/sec)
+#define DEFAULT_ZJERK                 0.0   //--BH (mm/sec)
+#define DEFAULT_EJERK                 5.0   // (mm/sec)
 
 //===========================================================================
 //=============================Additional Features===========================
@@ -569,7 +569,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; //--BH set to true to invert the log
 // http://reprap.org/wiki/RepRapDiscount_Full_Graphic_Smart_Controller
 //
 // ==> REMEMBER TO INSTALL U8glib to your ARDUINO library folder: http://code.google.com/p/u8glib/wiki/u8glib
-#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER  //--BH Just testing
+//#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER  //--BH Just testing
 
 // The RepRapWorld REPRAPWORLD_KEYPAD v1.1
 // http://reprapworld.com/?products_details&products_id=202&cPath=1591_1626
