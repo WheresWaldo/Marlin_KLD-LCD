@@ -541,8 +541,8 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; //--BH set to true to invert the log
 #define ABS_PREHEAT_FAN_SPEED 255   // Insert Value between 0 and 255
 
 //LCD and SD support
-#define ULTRA_LCD  //general LCD support, also 16x2
-#define DOGLCD  // Support for SPI LCD 128x64 (Controller ST7565R graphic Display Family)
+//#define ULTRA_LCD  //general LCD support, also 16x2
+//#define DOGLCD  // Support for SPI LCD 128x64 (Controller ST7565R graphic Display Family)
 //#define SDSUPPORT // Enable SD Card Support in Hardware Console
 //#define SDSLOW // Use slower SD transfer mode (not normally needed - uncomment if you're getting volume init error)
 //#define SD_CHECK_AND_RETRY // Use CRC checks and retries on the SD communication
