@@ -291,7 +291,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 #define Y_HOME_DIR -1
 #define Z_HOME_DIR -1
 
-#define min_software_endstops false //--BH If true, axis won't move to coordinates less than HOME_POS.
+#define min_software_endstops true //--BR If true, axis won't move to coordinates less than HOME_POS.
 #define max_software_endstops true  // If true, axis won't move to coordinates greater than the defined lengths below.
 
 //============================= Bed Auto Leveling ===========================
