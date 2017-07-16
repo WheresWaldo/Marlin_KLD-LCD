@@ -230,7 +230,7 @@
 // #define COREXY
 
 // coarse Endstop Settings
-#define ENDSTOPPULLUPS // Comment this out (using // at the start of the line) to disable the endstop pullup resistors
+//#define ENDSTOPPULLUPS //-BH Comment this out (using // at the start of the line) to disable the endstop pullup resistors
 
 #ifndef ENDSTOPPULLUPS
   // fine endstop settings: Individual pullups. will be ignored if ENDSTOPPULLUPS is defined
@@ -252,8 +252,8 @@
 #endif
 
 // The pullups are needed if you directly connect a mechanical endswitch between the signal and ground pins.
-const bool X_MIN_ENDSTOP_INVERTING = false; // set to true to invert the logic of the endstop.
-const bool Y_MIN_ENDSTOP_INVERTING = false; // set to true to invert the logic of the endstop.
+const bool X_MIN_ENDSTOP_INVERTING = true; //--BH set to true to invert the logic of the endstop.
+const bool Y_MIN_ENDSTOP_INVERTING = true; //--BH set to true to invert the logic of the endstop.
 const bool Z_MIN_ENDSTOP_INVERTING = false; //--BH set to true to invert the logic of the endstop.
 const bool X_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic of the endstop.
 const bool Y_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic of the endstop.
@@ -355,16 +355,16 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 
 //// MOVEMENT SETTINGS
 #define NUM_AXIS 4 // The axis order in all axis related arrays is X, Y, Z, E
-#define HOMING_FEEDRATE {1500, 1500, 150, 300}  //--BH set the homing speeds (mm/min)
+#define HOMING_FEEDRATE {1500, 1500, 125, 300}  //--BH set the homing speeds (mm/min)
 
 // default settings
 
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {80, 80, 1600, 700}  //--BH default settings for for KLD-LCD1260/2150
-#define DEFAULT_MAX_FEEDRATE          {400, 400, 200, 45}  //--BH (mm/sec)
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {80, 80, 1600, 80}  //--BH default settings for for KLD-LCD1260/2150
+#define DEFAULT_MAX_FEEDRATE          {400, 400, 250, 400}  //--BH (mm/sec)
 #define DEFAULT_MAX_ACCELERATION      {1000, 1000, 400, 1000}  //--BH X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 
-#define DEFAULT_ACCELERATION          1000    //--BH X, Y, Z and E max acceleration in mm/s^2 for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  2000   //--BH X, Y, Z and E max acceleration in mm/s^2 for retracts
+#define DEFAULT_ACCELERATION          200    //--BH X, Y, Z and E max acceleration in mm/s^2 for printing moves
+#define DEFAULT_RETRACT_ACCELERATION  200   //--BH X, Y, Z and E max acceleration in mm/s^2 for retracts
 
 // Offset of the extruders (uncomment if using more than one and relying on firmware to position when changing).
 // The offset has to be X=0, Y=0 for the extruder 0 hotend (default extruder).
@@ -373,8 +373,8 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 // #define EXTRUDER_OFFSET_Y {0.0, 5.00}  // (in mm) for each extruder, offset of the hotend on the Y axis
 
 // The speed change that does not require acceleration (i.e. the software might assume it can be done instantaneously)
-#define DEFAULT_XYJERK                20.0    //--BH (mm/sec) Probably can be reduced with testing
-#define DEFAULT_ZJERK                 0.4     // (mm/sec)
+#define DEFAULT_XYJERK                20.0    // (mm/sec) Probably can be reduced with testing
+#define DEFAULT_ZJERK                 0.0     //--BH (mm/sec)
 #define DEFAULT_EJERK                 0.4    // (mm/sec)
 
 //===========================================================================
