@@ -491,9 +491,9 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; //--BH set to true to invert the log
 
 #define DEFAULT_AXIS_STEPS_PER_UNIT   {80, 80, 1600, 700}  //--BH default settings for for KLD-LCD1260/2150
 #define DEFAULT_MAX_FEEDRATE          {400, 400, 150, 45}  //--BH (mm/sec)
-#define DEFAULT_MAX_ACCELERATION      {1000, 1000, 200, 1000}  //--BH X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
+#define DEFAULT_MAX_ACCELERATION      {1000, 1000, 40, 1000}  //--BH X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 
-#define DEFAULT_ACCELERATION          1000  //--BH X, Y, Z and E max acceleration in mm/s^2 for printing moves
+#define DEFAULT_ACCELERATION          30  //--BH X, Y, Z and E max acceleration in mm/s^2 for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  2000  //--BH X, Y, Z and E max acceleration in mm/s^2 for retracts
 
 // Offset of the extruders (uncomment if using more than one and relying on firmware to position when changing).
