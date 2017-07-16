@@ -1,8 +1,8 @@
- Printer Information
- ===================
+Printer Information
+===================
 Modified for use on the KLD series of printers, should work on the 1260 and 2150 as well as clones. No guarantee that it will work on any other printers. It will not work as is on the Wanhao Duplicator 7.
 
-Most of the direct DLP control for the mUVeDLP printers will not be pertinent to these printers so all the added M65x commands have been purged from the source code.
+All of the direct DLP control for the mUVeDLP printers will not be pertinent to these printers so all the added M65x commands have been purged from the source code.
 
 -Marlin Firmware-
 Marlin has a GPL license because I believe in open development.
@@ -12,48 +12,9 @@ Quick Information
 ===================
 This RepRap firmware is a mashup between <a href="https://github.com/kliment/Sprinter">Sprinter</a>, <a href="https://github.com/simen/grbl/tree">grbl</a> and many original parts.
 
-Derived from Sprinter and Grbl by Erik van der Zalm.
-Sprinters lead developers are Kliment and caru.
-Grbls lead developer is Simen Svale Skogsrud. Sonney Jeon (Chamnit) improved some parts of grbl
-A fork by bkubicek for the Ultimaker was merged, and further development was aided by him.
-Some features have been added by:
-Lampmaker, Bradley Feldman, and others...
 
-
-Features:
-
-*   Interrupt based movement with real linear acceleration
-*   High steprate
-*   Look ahead (Keep the speed high when possible. High cornering speed)
-*   Interrupt based temperature protection
-*   preliminary support for Matthew Roberts advance algorithm
-    For more info see: http://reprap.org/pipermail/reprap-dev/2011-May/003323.html
-*   Full endstop support
-*   SD Card support
-*   SD Card folders (works in pronterface)
-*   SD Card autostart support
-*   LCD support (ideally 20x4)
-*   LCD menu system for autonomous SD card printing, controlled by an click-encoder.
-*   EEPROM storage of e.g. max-velocity, max-acceleration, and similar variables
-*   many small but handy things originating from bkubicek's fork.
-*   Arc support
-*   Temperature oversampling
-*   Dynamic Temperature setpointing aka "AutoTemp"
-*   Support for QTMarlin, a very beta GUI for PID-tuning and velocity-acceleration testing. https://github.com/bkubicek/QTMarlin
-*   Endstop trigger reporting to the host software.
-*   Updated sdcardlib
-*   Heater power reporting. Useful for PID monitoring.
-*   PID tuning
-*   CoreXY kinematics (www.corexy.com/theory.html)
-*   Delta kinematics
-*   Dual X-carriage support for multiple extruder systems
-*   Configurable serial port to support connection of wireless adaptors.
-*   Automatic operation of extruder/cold-end cooling fans based on nozzle temperature
-*   RC Servo Support, specify angle or duration for continuous rotation servos.
-*   Bed Auto Leveling.
-
-The default baudrate is 250000. This baudrate has less jitter and hence errors than the usual 115200 baud, but is less supported by drivers and host-environments.
-
+The normal default baudrate is 250000. This baudrate has less jitter and hence errors than the usual 115200 baud, but is less supported by drivers and host-environments.
+Since nanoDLP does not support 250000, 115200 is used as the default instead.
 
 Differences and additions to the already good Sprinter firmware:
 ================================================================
@@ -65,30 +26,6 @@ lookahead will only decelerate and accelerate to a velocity,
 so that the change in vectorial velocity magnitude is less than the xy_jerk_velocity.
 This is only possible, if some future moves are already processed, hence the name.
 It leads to less over-deposition at corners, especially at flat angles.
-
-*Arc support:*
-
-Slic3r can find curves that, although broken into segments, were ment to describe an arc.
-Marlin is able to print those arcs. The advantage is the firmware can choose the resolution,
-and can perform the arc with nearly constant velocity, resulting in a nice finish.
-Also, less serial communication is needed.
-
-*Temperature Oversampling:*
-
-To reduce noise and make the PID-differential term more useful, 16 ADC conversion results are averaged.
-
-*AutoTemp:*
-
-If your gcode contains a wide spread of extruder velocities, or you realtime change the building speed, the temperature should be changed accordingly.
-Usually, higher speed requires higher temperature.
-This can now be performed by the AutoTemp function
-By calling M109 S<mintemp> T<maxtemp> F<factor> you enter the autotemp mode.
-
-You can leave it by calling M109 without any F.
-If active, the maximal extruder stepper rate of all buffered moves will be calculated, and named "maxerate" [steps/sec].
-The wanted temperature then will be set to t=tempmin+factor*maxerate, while being limited between tempmin and tempmax.
-If the target temperature is set manually or by gcode to a value less then tempmin, it will be kept without change.
-Ideally, your gcode can be completely free of temperature controls, apart from a M109 S T F in the start.gcode, and a M109 S0 in the end.gcode.
 
 *EEPROM:*
 
@@ -118,21 +55,6 @@ First *0 will be performed, than *1 and so on. That way, you can heat up or even
 If an endstop is hit while moving towards the endstop, the location at which the firmware thinks that the endstop was triggered is outputed on the serial port.
 This is useful, because the user gets a warning message.
 However, also tools like QTMarlin can use this for finding acceptable combinations of velocity+acceleration.
-
-*Coding paradigm:*
-
-Not relevant from a user side, but Marlin was split into thematic junks, and has tried to partially enforced private variables.
-This is intended to make it clearer, what interacts which what, and leads to a higher level of modularization.
-We think that this is a useful prestep for porting this firmware to e.g. an ARM platform in the future.
-A lot of RAM (with enabled LCD ~2200 bytes) was saved by storing char []="some message" in Program memory.
-In the serial communication, a #define based level of abstraction was enforced, so that it is clear that
-some transfer is information (usually beginning with "echo:"), an error "error:", or just normal protocol,
-necessary for backwards compatibility.
-
-*Interrupt based temperature measurements:*
-
-An interrupt is used to manage ADC conversions, and enforce checking for critical temperatures.
-This leads to less blocking in the heater management routine.
 
 Implemented G Codes:
 ====================
@@ -234,20 +156,17 @@ M Codes
 Configuring and compilation:
 ============================
 
-Install the arduino software IDE/toolset v23 (Some configurations also work with 1.x.x)
+Install the arduino software IDE/toolset v1.6.8 or newer
    http://www.arduino.cc/en/Main/Software
 
-For gen6/gen7 and sanguinololu the Sanguino directory in the Marlin dir needs to be copied to the arduino environment.
-  copy ArduinoAddons\Arduino_x.x.x\sanguino <arduino home>\hardware\Sanguino
-
 Copy the Marlin firmware
-   https://github.com/ErikZalm/Marlin/tree/Marlin_v1
+   https://github.com/WheresWaldo/Marlin_KLD-LCD
    (Use the download button)
 
 Start the arduino IDE.
-Select Tools -> Board -> Arduino Mega 2560    or your microcontroller
+Select Tools -> Board -> Arduino Mega 2560 or your microcontroller
 Select the correct serial port in Tools ->Serial Port
-Open Marlin.pde
+Open Marlin.ino
 
 Click the Verify/Compile button
 
