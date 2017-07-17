@@ -1383,7 +1383,7 @@ void process_commands()
             }
           #endif //FWRETRACT
         prepare_move();
-		st_synchronize();
+		    st_synchronize();
         SERIAL_ECHOLNPGM("Z_move_comp");
 		//ClearToSend();
       }
