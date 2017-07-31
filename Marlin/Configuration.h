@@ -291,7 +291,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 #define Y_HOME_DIR -1
 #define Z_HOME_DIR -1
 
-#define min_software_endstops false //--BH If true, axis won't move to coordinates less than HOME_POS.
+#define min_software_endstops true //--BR If true, axis won't move to coordinates less than HOME_POS.
 #define max_software_endstops true  // If true, axis won't move to coordinates greater than the defined lengths below.
 
 //============================= Bed Auto Leveling ===========================
@@ -360,11 +360,11 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 // default settings
 
 #define DEFAULT_AXIS_STEPS_PER_UNIT   {80, 80, 1600, 80}  //--BH default settings for for KLD-LCD1260/2150
-#define DEFAULT_MAX_FEEDRATE          {400, 400, 250, 400}  //--BH (mm/sec)
-#define DEFAULT_MAX_ACCELERATION      {1000, 1000, 400, 1000}  //--BH X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
+#define DEFAULT_MAX_FEEDRATE          {400, 400, 10, 400}  //--BR limit z-axis moves to 10 mm/sec.
+#define DEFAULT_MAX_ACCELERATION      {1000, 1000, 50, 1000}  //--BR X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 
-#define DEFAULT_ACCELERATION          200    //--BH X, Y, Z and E max acceleration in mm/s^2 for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  200   //--BH X, Y, Z and E max acceleration in mm/s^2 for retracts
+#define DEFAULT_ACCELERATION          50  //--BR X, Y, Z and E max acceleration in mm/s^2 for printing moves
+#define DEFAULT_RETRACT_ACCELERATION  50  //--BR X, Y, Z and E max acceleration in mm/s^2 for retracts
 
 // Offset of the extruders (uncomment if using more than one and relying on firmware to position when changing).
 // The offset has to be X=0, Y=0 for the extruder 0 hotend (default extruder).
