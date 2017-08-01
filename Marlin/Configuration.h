@@ -38,7 +38,7 @@
 //#define STRING_SPLASH_LINE2 STRING_DISTRIBUTION_DATE // will be shown during bootup in line 2
 
 #define STRING_VERSION_CONFIG_H __DATE__ " " __TIME__ // build date and time
-#define STRING_CONFIG_H_AUTHOR "(BH, default config)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(BH, KLD config)" // Who made the changes.
 
 // SERIAL_PORT selects which serial port should be used for communication with the host.
 // This allows the connection of wireless adapters (for instance) to non-default port pins.
@@ -340,7 +340,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; //--BH set to true to invert the log
 #define Y_HOME_DIR -1
 #define Z_HOME_DIR -1
 
-#define min_software_endstops false //--BH If true, axis won't move to coordinates less than HOME_POS.
+#define min_software_endstops true //--BH If true, axis won't move to coordinates less than HOME_POS.
 #define max_software_endstops true  // If true, axis won't move to coordinates greater than the defined lengths below.
 
 // Travel limits after homing
@@ -489,9 +489,9 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; //--BH set to true to invert the log
 
 // default settings
 
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {80, 80, 1600, 700}  //--BH default settings for for KLD-LCD1260/2150
-#define DEFAULT_MAX_FEEDRATE          {400, 400, 150, 45}  //--BH (mm/sec)
-#define DEFAULT_MAX_ACCELERATION      {1000, 1000, 100, 1000}  //--BH X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {80, 80, 1600, 80}  //--BH default settings for for KLD-LCD1260/2150
+#define DEFAULT_MAX_FEEDRATE          {100, 100, 100, 100}  //--BH limit total movements in mm/sec
+#define DEFAULT_MAX_ACCELERATION      {100, 100, 100, 100}  //--BH X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 
 #define DEFAULT_ACCELERATION          50  //--BH X, Y, Z and E max acceleration in mm/s^2 for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  50  //--BH X, Y, Z and E max acceleration in mm/s^2 for retracts

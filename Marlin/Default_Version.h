@@ -8,7 +8,7 @@
 #if true
   #define SHORT_BUILD_VERSION "1.0.2+"
   #define DETAILED_BUILD_VERSION "1.0.2+ Development From Archive"
-  #define STRING_DISTRIBUTION_DATE "2015-08-00 12:00"
+  #define STRING_DISTRIBUTION_DATE "2017-08-01 12:00"
   // It might also be appropriate to define a location where additional information can be found
-  #define SOURCE_CODE_URL  "http:// ..."
+  #define SOURCE_CODE_URL  "https://github.com/WheresWaldo/Marlin_KLD-LCD"
 #endif
