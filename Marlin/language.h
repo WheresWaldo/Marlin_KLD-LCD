@@ -62,7 +62,7 @@
   #endif
 
 // Default firmware set to Mendel
-  #define FIRMWARE_URL "https://github.com/MarlinFirmware/Marlin"
+  #define FIRMWARE_URL "https://github.com/WheresWaldo/Marlin_KLD-LCD"
 #endif
 
 #ifdef CUSTOM_MACHINE_NAME
